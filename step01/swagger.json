@@ -1,0 +1,54 @@
+{
+  "openapi": "3.0.4",
+  "info": {
+    "title": "API Handling .NET API",
+    "description": "A simple example ASP.NET Core Web API for API handling demonstration",
+    "contact": {
+      "name": "API Handling Demo",
+      "email": "demo@example.com"
+    },
+    "version": "v1"
+  },
+  "paths": {
+    "/Time/now/utc": {
+      "get": {
+        "tags": [
+          "Time"
+        ],
+        "summary": "Gets the current UTC time",
+        "responses": {
+          "200": {
+            "description": "Returns the current UTC time",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TimeResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "TimeResponse": {
+        "required": [
+          "timeString"
+        ],
+        "type": "object",
+        "properties": {
+          "timeString": {
+            "minLength": 1,
+            "type": "string",
+            "description": "The formatted time string in ISO 8601 format",
+            "example": "2023-12-01T14:30:00.000Z"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents a time response containing a formatted time string"
+      }
+    }
+  }
+}
