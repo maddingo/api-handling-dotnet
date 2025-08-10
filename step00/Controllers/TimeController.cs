@@ -4,7 +4,7 @@ using step00.Models;
 namespace step00.Controllers;
 
 [ApiController]
-[Route("[controller]")]
+[Route("/")]
 public class TimeController : ControllerBase
 {
     [HttpGet("now/utc")]
